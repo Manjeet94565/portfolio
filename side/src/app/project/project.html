@@ -1,0 +1,60 @@
+<section class="projects-hero position-relative">
+  <!-- Portfolio at top-left -->
+  <div class="portfolio-text">Portfolio</div>
+
+  <!-- Navigation at top-right -->
+  <nav class="top-nav">
+    <button class="nav-toggle" (click)="toggleMenu()" [class.active]="menuActive">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" [class.show]="menuActive">
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+      <a routerLink="/work" routerLinkActive="active" (click)="closeMenu()">Work</a>
+      <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills</a>
+    </div>
+  </nav>
+
+  <!-- Vertical text on left -->
+  <div class="vertical-text left">Scroll Down</div>
+
+  <!-- Vertical text on right -->
+  <div class="vertical-text right">Explore</div>
+
+  <!-- Centered content -->
+  <div class="projects-content">
+    <h1 class="projects-title">My Work</h1>
+    <p class="projects-subtitle">Showcasing my recent projects and achievements</p>
+    <div class="projects-grid">
+      <div class="project-item">
+        <img src="/assets/project1.jpg" alt="E-Commerce Platform" class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">Construction-website</h3>
+          <p class="project-description">A Construction-website built with Angular , featuring contact and project booking.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="/assets/project2.jpg" alt="Portfolio Website" class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">Portfolio Website</h3>
+          <p class="project-description">A responsive portfolio website showcasing creative work, built with modern web technologies and smooth animations.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="/assets/project3.jpg" alt="Task Management App" class="project-image">
+        <div class="project-content">
+          <h3 class="project-title">Task Management App</h3>
+          <p class="project-description">A collaborative task management application with real-time updates, built using React and Firebase.</p>
+          <a href="#" class="project-link">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright at bottom -->
+  <div class="copyright">&copy; 2023 John Doe. All rights reserved.</div>
+</section>
