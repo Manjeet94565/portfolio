@@ -1,0 +1,40 @@
+ <section class="hero position-relative">
+    <!-- Portfolio at top-left -->
+    <div class="portfolio-text">Portfolio.</div>
+
+    <!-- Navigation at top-right -->
+    <nav class="top-nav">
+        <button class="nav-toggle" (click)="toggleMenu()" [class.active]="menuActive">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" [class.show]="menuActive">
+            <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+            <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+            <a routerLink="/work" routerLinkActive="active" (click)="closeMenu()">Work</a>
+            <a routerLink="/achiev" routerLinkActive="active" (click)="closeMenu()">Achievements</a>
+            <a routerLink="/events" routerLinkActive="active" (click)="closeMenu()">Events</a>
+            <a routerLink="/hackathon" routerLinkActive="active" (click)="closeMenu()">Hackathon</a>
+            <a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experience</a>
+        </div>
+    </nav>
+
+    <!-- Vertical text on left -->
+    <div class="vertical-text left" routerLink="/contact" style="cursor: pointer;">Contact</div>
+
+    <!-- Vertical text on right -->
+    <div class="vertical-text right" routerLink="/skills" style="cursor: pointer;">skills</div>
+
+    <!-- Centered content -->
+    <div class="hero-content">
+        <div class="profile-circle">
+            <img src="/assets/professional_photo_for_linkedin.png" alt="Profile" class="profile-img">
+        </div>
+        <h1 class="name">Manjeet Varun</h1>
+        <p class="subtitle">I'm Fullstack Developer</p>
+    </div>
+
+    <!-- Copyright at bottom -->
+    <div class="copyright">&copy; 2025 Manjeet Varun. All rights reserved.</div>
+</section>

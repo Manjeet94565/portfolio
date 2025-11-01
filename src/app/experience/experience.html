@@ -1,0 +1,74 @@
+<section class="experience-hero position-relative">
+    <!-- Portfolio at top-left -->
+    <div class="portfolio-text">Portfolio.</div>
+
+    <!-- Navigation at top-right -->
+    <nav class="top-nav">
+        <button class="nav-toggle" (click)="toggleMenu()" [class.active]="menuActive">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" [class.show]="menuActive">
+            <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+            <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+            <a routerLink="/work" routerLinkActive="active" (click)="closeMenu()">Work</a>
+            <a routerLink="/achiev" routerLinkActive="active" (click)="closeMenu()">Achievements</a>
+            <a routerLink="/events" routerLinkActive="active" (click)="closeMenu()">Events</a>
+            <a routerLink="/hackathon" routerLinkActive="active" (click)="closeMenu()">Hackathon</a>
+            <a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experience</a>
+        </div>
+    </nav>
+
+    <!-- Vertical text on left -->
+    <div class="vertical-text left" routerLink="/contact" style="cursor: pointer;">Contact</div>
+
+    <!-- Vertical text on right -->
+    <div class="vertical-text right" routerLink="/skills" style="cursor: pointer;">skills</div>
+
+    <!-- Centered content -->
+    <div class="hero-content">
+        <h1 class="page-title">Experience</h1>
+        <p class="page-subtitle">My professional journey and work experience</p>
+    </div>
+
+    <!-- Copyright at bottom -->
+    <div class="copyright">&copy; 2025 Manjeet Varun. All rights reserved.</div>
+</section>
+
+<section class="experience-section">
+    <div class="container">
+        <div class="experience-grid">
+            <div class="experience-card" *ngFor="let exp of experiences">
+                <div class="experience-image">
+                    <img [src]="exp.image" [alt]="exp.company">
+                    <div class="photo-count" *ngIf="exp.photos.length > 1">
+                        <i class="fas fa-images"></i> {{ exp.photos.length }} photos
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <h3>{{ exp.company }}</h3>
+                    <p class="experience-position">{{ exp.position }}</p>
+                    <p class="experience-duration">{{ exp.duration }}</p>
+                    <p class="experience-location">Location: {{ exp.location }}</p>
+                    <p class="experience-description">{{ exp.description }}</p>
+                    <div class="technologies">
+                        <span class="tech-tag" *ngFor="let tech of exp.technologies">{{ tech }}</span>
+                    </div>
+                    <button class="btn btn-primary" (click)="viewPhotos(exp)">View Certificate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Modal -->
+<div class="modal" [class.show]="selectedExperience" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>{{ selectedExperience?.company }} - {{ selectedExperience?.position }}</h2>
+        <div class="photo-gallery">
+            <img *ngFor="let photo of selectedExperience?.photos" [src]="photo" [alt]="selectedExperience?.company + ' certificate'" class="gallery-photo">
+        </div>
+    </div>
+</div>

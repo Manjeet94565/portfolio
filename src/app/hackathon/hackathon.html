@@ -1,0 +1,70 @@
+<section class="hackathon-hero position-relative">
+    <!-- Portfolio at top-left -->
+    <div class="portfolio-text">Portfolio.</div>
+
+    <!-- Navigation at top-right -->
+    <nav class="top-nav">
+        <button class="nav-toggle" (click)="toggleMenu()" [class.active]="menuActive">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" [class.show]="menuActive">
+            <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+            <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+            <a routerLink="/work" routerLinkActive="active" (click)="closeMenu()">Work</a>
+            <a routerLink="/achiev" routerLinkActive="active" (click)="closeMenu()">Achievements</a>
+            <a routerLink="/events" routerLinkActive="active" (click)="closeMenu()">Events</a>
+            <a routerLink="/hackathon" routerLinkActive="active" (click)="closeMenu()">Hackathon</a>
+            <a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experience</a>
+        </div>
+    </nav>
+
+    <!-- Vertical text on left -->
+    <div class="vertical-text left" routerLink="/contact" style="cursor: pointer;">Contact</div>
+
+    <!-- Vertical text on right -->
+    <div class="vertical-text right" routerLink="/skills" style="cursor: pointer;">skills</div>
+
+    <!-- Centered content -->
+    <div class="hero-content">
+        <h1 class="page-title">Hackathons</h1>
+        <p class="page-subtitle">Hackathons I've participated in</p>
+    </div>
+
+    <!-- Copyright at bottom -->
+    <div class="copyright">&copy; 2025 Manjeet Varun. All rights reserved.</div>
+</section>
+
+<section class="hackathon-section">
+    <div class="container">
+        <div class="hackathon-grid">
+            <div class="hackathon-card" *ngFor="let hackathon of hackathons">
+                <div class="hackathon-image">
+                    <img [src]="hackathon.image" [alt]="hackathon.name">
+                    <div class="photo-count" *ngIf="hackathon.photos.length > 1">
+                        <i class="fas fa-images"></i> {{ hackathon.photos.length }} photos
+                    </div>
+                </div>
+                <div class="hackathon-content">
+                    <h3>{{ hackathon.name }}</h3>
+                    <p class="hackathon-date">{{ hackathon.date }}, {{ hackathon.year }}</p>
+                    <p class="hackathon-location">Location: {{ hackathon.location }}</p>
+                    <p class="hackathon-description">{{ hackathon.description }}</p>
+                    <button class="btn btn-primary" (click)="viewPhotos(hackathon)">See All Photos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Modal -->
+<div class="modal" [class.show]="selectedEvent" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>{{ selectedEvent?.name }} Photos</h2>
+        <div class="photo-gallery">
+            <img *ngFor="let photo of selectedEvent?.photos" [src]="photo" [alt]="selectedEvent?.name + ' photo'" class="gallery-photo">
+        </div>
+    </div>
+</div>

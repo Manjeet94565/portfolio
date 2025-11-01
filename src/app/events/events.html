@@ -1,0 +1,69 @@
+<section class="events-hero position-relative">
+    <!-- Portfolio at top-left -->
+    <div class="portfolio-text">Portfolio.</div>
+
+    <!-- Navigation at top-right -->
+    <nav class="top-nav">
+        <button class="nav-toggle" (click)="toggleMenu()" [class.active]="menuActive">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" [class.show]="menuActive">
+            <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+            <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+            <a routerLink="/work" routerLinkActive="active" (click)="closeMenu()">Work</a>
+            <a routerLink="/achiev" routerLinkActive="active" (click)="closeMenu()">Achievements</a>
+            <a routerLink="/events" routerLinkActive="active" (click)="closeMenu()">Events</a>
+        </div>
+    </nav>
+
+    <!-- Vertical text on left -->
+    <div class="vertical-text left" routerLink="/contact" style="cursor: pointer;">Contact</div>
+
+    <!-- Vertical text on right -->
+    <div class="vertical-text right" routerLink="/skills" style="cursor: pointer;">skills</div>
+
+    <!-- Centered content -->
+    <div class="hero-content">
+        <h1 class="page-title">Events</h1>
+        <p class="page-subtitle">Events I've attended and participated in</p>
+    </div>
+
+</section>
+
+<section class="events-section">
+    <div class="container">
+        <div class="events-grid">
+            <div class="event-card" *ngFor="let event of events">
+                <div class="event-image">
+                    <img [src]="event.image" [alt]="event.name">
+                    <div class="photo-count" *ngIf="event.photos.length > 1">
+                        <i class="fas fa-images"></i> {{ event.photos.length }} photos
+                    </div>
+                </div>
+                <div class="event-content">
+                    <h3>{{ event.name }}</h3>
+                    <p class="event-date">{{ event.date }}, {{ event.year }}</p>
+                    <p class="event-location">Location: {{ event.location }}</p>
+                    <p class="event-description">{{ event.description }}</p>
+                    <button class="btn btn-primary" (click)="viewPhotos(event)">See All Photos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Photo Modal -->
+<div class="modal" [class.show]="selectedEvent" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>{{ selectedEvent?.name }} Photos</h2>
+        <div class="photo-gallery">
+            <img *ngFor="let photo of selectedEvent?.photos" [src]="photo" [alt]="selectedEvent?.name + ' photo'" class="gallery-photo">
+        </div>
+    </div>
+</div>
+
+<!-- Copyright at bottom -->
+<div class="copyright">&copy; 2025 Manjeet Varun. All rights reserved.</div>
