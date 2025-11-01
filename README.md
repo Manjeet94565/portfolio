@@ -176,9 +176,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Manjeet Varun**
 - Portfolio: [Your Portfolio URL]
-- LinkedIn: [Your LinkedIn]
-- Email: [Your Email]
-- GitHub: [@your-username]
+- LinkedIn: [https://www.linkedin.com/in/manjeet-varun-8149b7371/]
+- Email: [manjeetgraphics090@gmail.com]
+- GitHub: [@Manjeet94565]
 
 ---
 
