@@ -19,7 +19,7 @@ interface Event {
   styleUrl: './events.css',
 })
 export class Events {
-  menuActive = false;
+  menuActive = true;
   selectedEvent: Event | null = null;
 
   events: Event[] = [

@@ -19,7 +19,7 @@ interface HackathonEvent {
   styleUrl: './hackathon.css',
 })
 export class Hackathon {
-  menuActive = false;
+  menuActive = true;
   selectedEvent: HackathonEvent | null = null;
 
   hackathons: HackathonEvent[] = [
