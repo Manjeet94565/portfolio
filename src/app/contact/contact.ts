@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact.css',
 })
 export class Contact {
-  menuActive = false;
+  menuActive = true;
 
   contact = {
     name: '',

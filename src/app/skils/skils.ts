@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './skils.css',
 })
 export class Skils {
-  menuActive = false;
+  menuActive = true;
 
   technologies = [
     { name: 'Angular', logo: '/assets/Angular.png' },

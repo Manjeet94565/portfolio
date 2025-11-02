@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './landing.css',
 })
 export class Landing {
-  menuActive = false;
+  menuActive = true;
 
   toggleMenu() {
     this.menuActive = !this.menuActive;
