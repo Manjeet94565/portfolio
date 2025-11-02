@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './achiev.css',
 })
 export class Achiev {
-  menuActive = true;
+  menuActive = false;
 
   certificates = [
     {

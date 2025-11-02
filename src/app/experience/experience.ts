@@ -20,7 +20,7 @@ interface ExperienceItem {
   styleUrl: './experience.css',
 })
 export class Experience {
-  menuActive = true;
+  menuActive = false;
   selectedExperience: ExperienceItem | null = null;
 
   experiences: ExperienceItem[] = [
