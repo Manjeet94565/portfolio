@@ -1,0 +1,46 @@
+<div class="loading-screen">
+  <!-- Matrix rain background -->
+  <div class="matrix-rain">
+    <div class="matrix-column" *ngFor="let col of matrixColumns; let i = index" [style.left.%]="col.left" [style.animation-delay.ms]="col.delay">
+      <span *ngFor="let char of col.chars">{{ char }}</span>
+    </div>
+  </div>
+
+  <!-- Glitch overlay -->
+  <div class="glitch-overlay"></div>
+
+  <!-- Scanlines -->
+  <div class="scanlines"></div>
+
+  <!-- Main UI Frame -->
+  <div class="ui-frame">
+    <!-- Header Text -->
+    <div class="header-text">{{ message }}</div>
+
+    <!-- Progress Section -->
+    <div class="progress-section">
+      <div class="progress-container">
+        <div class="progress-bar" [style.width.%]="progress"></div>
+      </div>
+      <div class="progress-text">PROGRESS... {{ progress }}%</div>
+    </div>
+
+    <!-- Terminal Panel -->
+    <div class="terminal-panel">
+      <div class="terminal-line" *ngFor="let line of terminalLines">{{ line }}</div>
+    </div>
+
+    <!-- Target IP Box -->
+    <div class="ip-box">
+      <div class="ip-header">TARGET IP: 85.154.21.216</div>
+      <div class="ip-details">NAME: Manjeet. Varun</div>
+      <div class="ip-details">LOCATION: Agra, India</div>
+    </div>
+
+    <!-- Secure Network Icon -->
+    <div class="secure-icon">
+      <div class="lock-icon">🔒</div>
+      <div class="secure-text">SECURED NETWORK ENABLED</div>
+    </div>
+  </div>
+</div>

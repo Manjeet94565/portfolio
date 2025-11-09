@@ -1,0 +1,407 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  color: #00ff66;
+}
+
+/* ===== Loading Text ===== */
+.loading-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: #00ff00;
+  text-shadow:
+    0 0 10px rgba(0, 255, 0, 0.6),
+    0 0 20px rgba(0, 255, 0, 0.4);
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+/* ===== Progress Bar Container ===== */
+.progress-container {
+  width: 70%;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  padding: 3px;
+  box-shadow:
+    0 0 15px rgba(0, 255, 0, 0.2),
+    inset 0 0 10px rgba(0, 255, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== Progress Bar Fill ===== */
+.progress-bar {
+  height: 12px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #00ff00, #004400);
+  width: 0%;
+  position: relative;
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 0 12px rgba(0, 255, 0, 0.8);
+}
+
+/* Scan line effect */
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 8px,
+      rgba(255, 255, 255, 0.08) 8px,
+      rgba(255, 255, 255, 0.08) 16px
+    );
+  animation: scanline 1.8s linear infinite;
+}
+
+/* ===== Matrix Rain Effect ===== */
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.matrix-column {
+  position: absolute;
+  top: -100%;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  color: #00ff00;
+  opacity: 0.6;
+  animation: matrixFall 20s linear infinite;
+  line-height: 1.2;
+}
+
+.matrix-column span {
+  display: block;
+}
+
+/* ===== Floating Particles (lightweight) ===== */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: float 18s infinite ease-in;
+}
+
+.particle:nth-child(1) {
+  width: 3px; height: 3px;
+  background: #b967ff;
+  top: 15%; left: 10%;
+  animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+  width: 2px; height: 2px;
+  background: #00f3ff;
+  top: 75%; left: 85%;
+  animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+  width: 4px; height: 4px;
+  background: #7e00ff;
+  top: 40%; left: 70%;
+  animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+  width: 1.5px; height: 1.5px;
+  background: #00f3ff;
+  top: 90%; left: 30%;
+  animation-delay: 6s;
+}
+
+/* ===== Light Sweep Reflection ===== */
+.reflection {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 243, 255, 0.08),
+    transparent
+  );
+  pointer-events: none;
+  animation: sweep 10s infinite ease-in-out;
+}
+
+/* ===== Hacking Terminal ===== */
+.terminal {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff00;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.terminal-line {
+  margin: 2px 0;
+  animation: type 2s steps(40, end) infinite;
+}
+
+.terminal-line:nth-child(1) { animation-delay: 0s; }
+.terminal-line:nth-child(2) { animation-delay: 1s; }
+.terminal-line:nth-child(3) { animation-delay: 2s; }
+.terminal-line:nth-child(4) { animation-delay: 3s; }
+
+@keyframes type {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* ===== UI Frame ===== */
+.ui-frame {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  height: 80%;
+  max-height: 600px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00ff66;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===== Header Text ===== */
+.header-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ff66;
+  text-shadow: 0 0 10px rgba(0, 255, 102, 0.8);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== Progress Section ===== */
+.progress-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 600px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff66;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #00ff66, #004400);
+  width: 0%;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 102, 0.8);
+}
+
+.progress-text {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* ===== Terminal Panel ===== */
+.terminal-panel {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ff66;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #00ff66;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.terminal-line {
+  margin: 2px 0;
+  animation: type 2s steps(40, end) infinite;
+}
+
+.terminal-line:nth-child(1) { animation-delay: 0s; }
+.terminal-line:nth-child(2) { animation-delay: 0.5s; }
+.terminal-line:nth-child(3) { animation-delay: 1s; }
+.terminal-line:nth-child(4) { animation-delay: 1.5s; }
+.terminal-line:nth-child(5) { animation-delay: 2s; }
+.terminal-line:nth-child(6) { animation-delay: 2.5s; }
+.terminal-line:nth-child(7) { animation-delay: 3s; }
+
+/* ===== IP Box ===== */
+.ip-box {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: #ff6666;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.ip-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.ip-details {
+  margin: 2px 0;
+}
+
+/* ===== Secure Network Icon ===== */
+.secure-icon {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #00ff66;
+}
+
+.lock-icon {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.secure-text {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* ===== Glitch Overlay ===== */
+.glitch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    );
+  pointer-events: none;
+  animation: glitch 0.1s infinite;
+}
+
+/* ===== Scanlines ===== */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 102, 0.03) 2px,
+      rgba(0, 255, 102, 0.03) 4px
+    );
+  pointer-events: none;
+  animation: scanlines 0.1s linear infinite;
+}
+
+/* ===== Animations ===== */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 102, 0.9);
+  }
+}
+
+@keyframes type {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes matrixFall {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes matrixFade {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loading-text {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+  }
+  .progress-container {
+    width: 85%;
+  }
+}

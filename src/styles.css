@@ -1,26 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Default to dark theme */
+/* Hacking theme */
 :root {
-  --bg-color: #1a1a2e;
-  --text-color: #ffffff;
-  --nav-bg: rgba(26, 26, 46, 0.9);
-  --card-bg: #16213e;
-  --border-color: #2a2a4e;
-  --accent-color: #007bff;
-  --secondary-text: #cccccc;
+  --bg-color: #000000;
+  --text-color: #00ff00;
+  --nav-bg: rgba(0, 0, 0, 0.9);
+  --card-bg: #111111;
+  --border-color: #333333;
+  --accent-color: #00ff00;
+  --secondary-text: #00aa00;
+  --neon-glow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
 }
 
-/* Light theme */
+/* Light theme (optional, but keeping for compatibility) */
 [data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #333333;
@@ -31,13 +32,13 @@ body {
   --secondary-text: #6c757d;
 }
 
-/* Dark theme */
+/* Dark theme (fallback) */
 [data-theme="dark"] {
-  --bg-color: #1a1a2e;
-  --text-color: #ffffff;
-  --nav-bg: rgba(26, 26, 46, 0.9);
-  --card-bg: #16213e;
-  --border-color: #2a2a4e;
-  --accent-color: #007bff;
-  --secondary-text: #cccccc;
+  --bg-color: #000000;
+  --text-color: #00ff00;
+  --nav-bg: rgba(0, 0, 0, 0.9);
+  --card-bg: #111111;
+  --border-color: #333333;
+  --accent-color: #00ff00;
+  --secondary-text: #00aa00;
 }

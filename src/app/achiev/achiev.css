@@ -1,22 +1,22 @@
-/* Dark Navy-Purple Theme for Achievements Page */
+/* Hacking Theme for Achievements Page */
 body {
-  background-color: #1a1a2e;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
 .achievements-hero {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, var(--bg-color), var(--card-bg));
   min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* Portfolio text at top-left */
@@ -26,7 +26,7 @@ body {
   left: 20px;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-color);
   z-index: 10;
 }
 
@@ -51,7 +51,7 @@ body {
   display: block;
   width: 25px;
   height: 3px;
-  background: #ffffff;
+  background: var(--text-color);
   margin: 5px 0;
   transition: 0.3s;
 }
@@ -74,7 +74,7 @@ body {
 }
 
 .nav-links a {
-  color: #ffffff;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -92,7 +92,7 @@ body {
   transform: translateY(-50%) rotate(-90deg);
   font-size: 0.9rem;
   font-weight: 300;
-  color: #cccccc;
+  color: var(--secondary-text);
   white-space: nowrap;
   z-index: 5;
 }
@@ -118,13 +118,13 @@ body {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .achievements-subtitle {
   font-size: 1.2rem;
   font-weight: 400;
-  color: #cccccc;
+  color: var(--secondary-text);
   margin-bottom: 60px;
 }
 
@@ -167,11 +167,11 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .achievement-description {
-  color: #cccccc;
+  color: var(--secondary-text);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -195,7 +195,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .certificate-grid {
@@ -242,11 +242,11 @@ body {
   font-size: 1.3rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .certificate-issuer {
-  color: #cccccc;
+  color: var(--secondary-text);
   margin-bottom: 10px;
   font-size: 1rem;
 }
@@ -268,7 +268,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   font-size: 0.8rem;
-  color: #cccccc;
+  color: var(--secondary-text);
   z-index: 10;
 }
 
@@ -428,8 +428,8 @@ body {
 
 .achievements-btn.secondary {
   background: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
 }
 
 .achievements-btn.secondary:hover {
