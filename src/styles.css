@@ -1,24 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tech Noir Theme Global Styles */
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 body {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Rajdhani', sans-serif;
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
+  background-image:
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-/* Hacking theme */
+/* Tech Noir Theme */
 :root {
   --bg-color: #000000;
-  --text-color: #00ff00;
+  --text-color: #00FFFF;
   --nav-bg: rgba(0, 0, 0, 0.9);
   --card-bg: #111111;
   --border-color: #333333;
-  --accent-color: #00ff00;
-  --secondary-text: #00aa00;
-  --neon-glow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  --accent-color: #FF00FF;
+  --secondary-text: #C0C0C0;
+  --electric-blue: #00FFFF;
+  --magenta: #FF00FF;
+  --chrome: #C0C0C0;
 }
 
 /* Light theme (optional, but keeping for compatibility) */
@@ -35,10 +41,10 @@ body {
 /* Dark theme (fallback) */
 [data-theme="dark"] {
   --bg-color: #000000;
-  --text-color: #00ff00;
+  --text-color: #00FFFF;
   --nav-bg: rgba(0, 0, 0, 0.9);
   --card-bg: #111111;
   --border-color: #333333;
-  --accent-color: #00ff00;
-  --secondary-text: #00aa00;
+  --accent-color: #FF00FF;
+  --secondary-text: #C0C0C0;
 }
